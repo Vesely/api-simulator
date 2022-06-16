@@ -29,7 +29,7 @@
 </head>
 
 <body class="min-h-screen" x-data="{ origin: window.location.origin }">
-    <div class="mx-auto max-w-2xl px-10 py-20">
+    <div class="mx-auto max-w-2xl px-5 py-20">
         <h1 class="text-3xl font-bold text-center mb-20">
             API Response <span class="font-medium">simulator</span>
         </h1>
@@ -47,7 +47,7 @@
             Examples
         </h2>
 
-        <div class="mb-10">
+        <div class="mb-16">
             <strong class="block text-sm mb-1">
                 Request:
             </strong>
@@ -63,7 +63,7 @@
             </code>
         </div>
 
-        <div class="mb-10">
+        <div class="mb-16">
             <strong class="block text-sm mb-1">
                 Request:
             </strong>
@@ -79,6 +79,19 @@
                     "error": "Custom message"
                 }
             </code>
+        </div>
+
+        <div class="mb-16">
+            <strong class="block text-sm mb-1">
+                Axios error simulator:
+            </strong>
+            <pre class="block p-3 bg-gray-200/75 mb-4 overflow-auto">
+axios.get('<span x-text="origin"></span>/500?json={"error":"Custom message"}')
+  .catch(function (error) {
+    console.log(error.response.status); // 500
+    console.log(error.response.data); // {"error":"Custom message"}')
+  });
+            </pre>
         </div>
 
     </div>
