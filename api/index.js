@@ -2,7 +2,7 @@ const Url = require('url');
 
 export default function handler(request, response) {
     const url = Url.parse(request.url, true);
-    const statusCode = parseInt(url.pathname.split('/').pop());
+    const statusCode = parseInt(url.pathname.split('/').pop()) || 200;
     let body = {};
 
     if (url.query.json) {
